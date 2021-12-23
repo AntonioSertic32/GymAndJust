@@ -27,6 +27,7 @@
               size="lg"
             ></b-form-textarea>
           </div>
+          <Supplements></Supplements>
           <!-- Spremanje -->
           <div class="row my-3">
             <b-button
@@ -83,6 +84,7 @@
 import { db } from "../firebase";
 import moment from "moment";
 import Vue from "vue";
+import Supplements from "./Supplements.vue";
 
 Vue.filter("formatDate", function (value) {
   if (value) {
@@ -92,6 +94,9 @@ Vue.filter("formatDate", function (value) {
 
 export default {
   name: "Workouts",
+  components: {
+    Supplements,
+  },
   data() {
     return {
       Workouts: [],
@@ -156,7 +161,7 @@ export default {
   opacity: 0;
 }
 label {
-  font-size: 28px;
+  font-size: 24px;
 }
 .listItem {
   text-align: start;
